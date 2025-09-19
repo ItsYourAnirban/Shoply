@@ -1,0 +1,36 @@
+# CodeRabbit configuration for Shoply
+reviews:
+  profile: chill
+  path_filters:
+    - "!app/android/**"
+    - "!app/ios/**"
+    - "!app/build/**"
+    - "!app/.dart_tool/**"
+    - "!backend/dist/**"
+    - "!backend/node_modules/**"
+    - "!**/*.lock"
+  path_instructions:
+    - path: "backend/src/**"
+      instructions: |
+        Focus on TypeScript best practices, async/await patterns, error handling, and security.
+        Check for proper type annotations and null safety.
+    - path: "app/lib/**"
+      instructions: |
+        Focus on Flutter/Dart conventions, widget composition, state management with Riverpod.
+        Check for proper null safety and performance considerations.
+  auto_review:
+    enabled: true
+    drafts: false
+  request_changes: ask
+  high_level_summary: true
+  poem: false
+  review_status: true
+  collapse_ellipsis: false
+  patch_analysis: true
+  auto_title_update: false
+language_hints:
+  - ".dart"
+  - ".ts"
+  - ".js"
+  - ".yaml"
+  - ".yml"

@@ -1,0 +1,11 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - CACHE_TTL_SECONDS=120
+      - ENABLED_PLATFORMS=FakeStore,MockBlinkit
+      - AFFILIATE_MODE=disabled
+    restart: unless-stopped

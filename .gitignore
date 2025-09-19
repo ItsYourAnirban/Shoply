@@ -1,0 +1,27 @@
+# Byte-compiled / logs
+node_modules/
+.npm/
+.pnpm-store/
+*.log
+
+# Editors
+.idea/
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Flutter / Dart
+app/.dart_tool/
+app/.flutter-plugins
+app/.flutter-plugins-dependencies
+app/.packages
+app/build/
+app/ios/Pods/
+app/ios/.symlinks/
+app/android/.gradle/
+app/android/app/build/
+
+# Env
+.env
+backend/.env
