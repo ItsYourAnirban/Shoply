@@ -30,7 +30,9 @@ jobs:
           flutter create .
           flutter pub get
           echo "Building with base-href=/${REPO_NAME}/"
-          flutter build web --release --base-href "/${REPO_NAME}/" --dart-define=SHOPLY_API_BASE=${SHOPLY_API_BASE}
+          API="${SHOPLY_API_BASE:-https://shoply-backend-xsol.onrender.com}"
+          echo "Using API base: $API"
+          flutter build web --release --base-href "/${REPO_NAME}/" --dart-define=SHOPLY_API_BASE=$API
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
