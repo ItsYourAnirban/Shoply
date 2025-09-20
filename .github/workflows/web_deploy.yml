@@ -24,11 +24,13 @@ jobs:
         working-directory: app
         env:
           SHOPLY_API_BASE: ${{ secrets.SHOPLY_API_BASE }}
+          REPO_NAME: ${{ github.event.repository.name }}
         run: |
           flutter --version
           flutter create .
           flutter pub get
-          flutter build web --release --base-href /shoply/ --dart-define=SHOPLY_API_BASE=${SHOPLY_API_BASE}
+          echo "Building with base-href=/${REPO_NAME}/"
+          flutter build web --release --base-href "/${REPO_NAME}/" --dart-define=SHOPLY_API_BASE=${SHOPLY_API_BASE}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
